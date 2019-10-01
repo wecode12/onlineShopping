@@ -1,21 +1,20 @@
-# from flask import render_template,request,redirect,url_for,abort
-# from . import main
-# from ..models import User,Blog,Comment,Subscribe
-# from .. import db,photos
+from flask import render_template,request,redirect,url_for,abort
+from . import main
+from ..models import User,Role,Payment,Product
+from .. import db,photos
 # from .forms import UpdateProfile,BlogForm,CommentForm,UpdateblogForm,SubscribeForm
-# from flask_login import login_required,current_user
-# import datetime
-# from ..email import mail_subscribemessage
+from flask_login import login_required,current_user
+import datetime
 
-# @main.route('/')
-# def index():
-#     '''
-#     View root page function that returns the index page and its data
-#     '''
-#     blogs=Blog.query.all()
-#     quote=get_quotes()
-#     title = 'Home - Welcome to Bloging website'
-#     return render_template('index.html',title = title,blogs=blogs,quote=quote)
+
+@main.route('/')
+def index():
+    '''
+    View root page function that returns the index page and its data
+    '''
+    
+    title = 'Home - Welcome to Online shopping website'
+    return render_template('index.html',title = title)
 # @main.route('/user/<uname>')
 # def profile(uname):
 #     user = User.query.filter_by(username = uname).first()
