@@ -71,7 +71,7 @@ class Payment(db.Model):
     
     @classmethod
     def getPayment(cls,id):
-        payments = Payement.query.filter_by(userId=id).all()
+        payments = Payment.query.filter_by(userId=id).all()
         return payments
 
 class Role(db.Model):
