@@ -14,18 +14,20 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar">
                 {% if current_user.is_authenticated %}
-                <li><a href="{{url_for('main.profile',uname=current_user.username)}}"
-                        style="font-family:'El Messiri', sans-serif ">Profile</a></li>
-                <li><a href="{{url_for ('main.newBlog')}}" style="font-family:'El Messiri', sans-serif ">Post your
-                        blog</a></li>
+               
                 <li><a href="{{url_for('auth.logout')}}" style="font-family:'El Messiri', sans-serif ">Sign out</a>
                 </li>
                 {% else %}
-                <li><a href="{{url_for('auth.login')}}" style="font-family:'El Messiri', sans-serif ">Sign in</a>
+                <li><a href="{{url_for('auth.login')}}" style="font-family:'El Messiri', sans-serif ">User </a>
+                </li>
+                }
+                <li><a href="{{url_for('auth.login_admin')}}" style="font-family:'El Messiri', sans-serif ">Admin </a>
                 </li>
                 {%endif%}
+               
             </ul>
         </div>
+      
 
     </div>
 </div>
